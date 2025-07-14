@@ -1,0 +1,8 @@
+:root {
+    --main-color: black;
+    --sub-color: rgb(75, 75, 75);
+    --title-color: rgb(170, 170, 170);
+    --input-border-color: rgb(170, 170, 170);
+    --back-color: rgb(225, 225, 225);
+    --impact-color: red;
+}

@@ -1,0 +1,65 @@
+#resultTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+#resultTable th, #resultTable td {
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--title-color);
+  text-align: left;
+}
+
+#resultTable thead th {
+  background: var(--title-color);
+  padding: 0.8rem 1rem;
+  font-weight: 600;
+}
+
+#resultTable thead th.videoNum {
+    width: 5%;
+}
+
+#resultTable thead th.upload {
+    width: 10%;
+}
+
+#resultTable thead th.viewCount {
+    width: 12%;
+}
+
+#resultTable thead th.title {
+    text-align: center;
+    width: 30%;
+}
+
+#resultTable thead th.channelName {
+    text-align: center;
+    width: 20%;
+}
+
+#resultTable thead th.subCount {
+    width: 10%;
+}
+
+#resultTable tbody tr:nth-child(even) {
+  background: var(--back-color)
+}
+
+#resultTable tbody td.title {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;     /* 넘치는 부분에 '…' 표시 */
+}
+
+#resultTable caption {
+  caption-side: bottom;
+  padding: 0.5rem 0;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;      /* 모바일 가로 스크롤 */
+}
