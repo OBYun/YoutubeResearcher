@@ -31,14 +31,19 @@
 }
 
 .searchItem:last-child {
-    grid-column: 3 / span 2;
+    grid-column: 1 / span 4;
 }
 
-.searchItem:nth-last-child(2) {
-    grid-column: 1 / span 2;
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-input[type="text"], input[type="number"] {
+input[type="text"], 
+input[type="number"], 
+input[type="password"], 
+select {
     width: 100%;
     font-size: 14px;
     padding: 10px 5px;
@@ -46,17 +51,25 @@ input[type="text"], input[type="number"] {
     border-radius: 2px;
 }
 
-input[type="text"]:hover, input[type="number"]:hover {
+input[type="text"]:hover, 
+input[type="number"]:hover, 
+input[type="password"]:hover {
     background-color: var(--back-color);
     transition: 0.1s;
 }
 
-input[type="text"]:focus {
+input[type="text"]:focus, 
+input[type="password"]:focus {
     background-color: white;
     transition: 0.1s;
 }
 
-input[type="submit"], input[type="button"] {
+select {
+    width: calc(100% + 12px);
+}
+
+input[type="submit"], 
+input[type="button"] {
     font-size: 14px;
     font-weight: 500;
     width: 100%;
@@ -68,7 +81,8 @@ input[type="submit"], input[type="button"] {
     border-radius: 2px;
 }
 
-input[type="submit"]:hover, input[type="button"]:hover {
+input[type="submit"]:hover, 
+input[type="button"]:hover {
     background-color: var(--back-color);
     cursor: pointer;
     transition: 0.1s;
