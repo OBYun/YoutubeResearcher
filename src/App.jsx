@@ -13,7 +13,6 @@ function App() {
       <Search></Search>
       <BrowserRouter>
         <Routes>
-          <Route path = "/" element = {<h1>Test</h1>} />
         </Routes>
       </BrowserRouter>
     </>

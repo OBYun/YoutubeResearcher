@@ -5,8 +5,8 @@ import Result from './Result';
 export default function Search() {
     const [ searchInfo, setSearchInfo ] = useState(null)
     const [ inputs, setInputs ] = useState({
-        apiKey: "asdfasdf",
-        subject: "수영",
+        apiKey: "",
+        subject: "",
         maxSubscribe: "150000",
         minViewCount: "500000",
         orderType: "viewCount",
@@ -27,7 +27,11 @@ export default function Search() {
     }
 
     const handleResult = () => {
-        setSearchInfo(inputs)
+        console.log("handleResult 실행됨.")
+        console.log(inputs)
+        setSearchInfo({
+            ...inputs,
+        })
     }
 
     return (
@@ -45,8 +49,12 @@ export default function Search() {
                     <div class = "searchItem"><label for="orderType">정렬 방식</label></div>
                     <div class = "searchItem">
                         <select name="orderType" onChange={handleChange} value={orderType}>
-                            <option value="asc">오름차순</option>
-                            <option value="desc">내림차순</option>
+                            <option value="date">날짜</option>
+                            <option value="rating">평점</option>
+                            <option value="relevance">관련성</option>
+                            <option value="title">제목</option>
+                            <option value="videoCount">업로드 영상 수</option>
+                            <option value="viewCount">조회수</option>
                         </select>
                     </div>
                     <div class = "searchItem"><label for="maxResults">표시 결과 최대 수</label></div>
@@ -71,13 +79,13 @@ export default function Search() {
                     <div class = "searchItem"><label>동영상 길이</label></div>
                     <div class = "searchItem">
                         <label class = "searchRadioLabel"><input type='radio' name='videoTypeName' value='all' onChange={handleChange} checked={videoTypeName == "all"}/>전체</label>
-                        <label class = "searchRadioLabel"><input type='radio' name='videoTypeName' onChange={handleChange} value='shorts' checked={videoTypeName == "shorts"}/>쇼츠</label>
+                        <label class = "searchRadioLabel"><input type='radio' name='videoTypeName' onChange={handleChange} value='short' checked={videoTypeName == "short"}/>쇼츠</label>
                         <label class = "searchRadioLabel"><input type='radio' name='videoTypeName' onChange={handleChange} value='long' checked={videoTypeName == "long"}/>롱폼</label>
                     </div>
                     <div class = "searchItem"><input type="button" value="검색하기" onClick={() => handleResult()}/></div>
                 </div>
             </form>
-            {searchInfo && <Result searchInfo = {searchInfo}></Result>}
+            { searchInfo && <Result searchInfo = {searchInfo}></Result> }
         </>
     )
 }
